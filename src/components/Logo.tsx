@@ -1,132 +1,136 @@
-import { motion } from 'motion/react';
+import React from "react";
 
 interface LogoProps {
-  variant?: 'header' | 'footer';
-  className?: string;
+  variant?: "header" | "footer";
 }
 
-export default function Logo({ variant = 'header', className = '' }: LogoProps) {
-  const isHeader = variant === 'header';
-
+export const Logo: React.FC<LogoProps> = ({ variant = "header" }) => {
   return (
-    <div className={`flex items-center gap-3.5 select-none ${className}`} id={`logo-${variant}`}>
-      {/* 3D Gold Film Reel Square Icon */}
-      <div className={`relative shrink-0 ${isHeader ? 'w-10 h-10' : 'w-12 h-12'}`}>
-        <svg
-          viewBox="0 0 100 100"
-          className="w-full h-full drop-shadow-[0_2.5px_6px_rgba(0,0,0,0.7)]"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            {/* Ultra-realistic Metallic Gold Gradient */}
-            <linearGradient id="gold-3d-metallic" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#AA7C11" />
-              <stop offset="10%" stopColor="#FFF9E6" />
-              <stop offset="30%" stopColor="#D4AF37" />
-              <stop offset="50%" stopColor="#FFEFB8" />
-              <stop offset="65%" stopColor="#AA7C11" />
-              <stop offset="85%" stopColor="#F0C243" />
-              <stop offset="100%" stopColor="#FFEFB8" />
-            </linearGradient>
-
-            {/* Inner Dark Bevel shadow mapping */}
-            <linearGradient id="dark-bevel" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#5a4209" />
-              <stop offset="50%" stopColor="#9a6b0c" />
-              <stop offset="100%" stopColor="#fff" stopOpacity="0.4" />
-            </linearGradient>
-
-            {/* Subtle Inner Glow */}
-            <filter id="gold-extrude" x="-10%" y="-10%" width="120%" height="120%">
-              <feDropShadow dx="1.5" dy="1.5" stdDeviation="1.2" floodColor="#000" floodOpacity="0.85" />
-            </filter>
-          </defs>
-
-          {/* Golden Outer Rounded Rectangle with Bevel effect */}
-          <rect
-            x="4"
-            y="4"
-            width="92"
-            height="92"
-            rx="21"
-            fill="#0f0f0f"
-            stroke="url(#gold-3d-metallic)"
-            strokeWidth="6"
-            className="stroke-[6.5]"
-          />
-          
-          <rect
-            x="10.5"
-            y="10.5"
-            width="79"
-            height="79"
-            rx="15"
+    <div
+      className="flex items-center gap-3 sm:gap-4 font-sans group select-none"
+      id={`studio-logo-${variant}`}
+    >
+      {/* First child container (div:nth-of-type(1)) for the logo badge */}
+      <div className="relative w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-105">
+        {/* The target span for Selector 1 and Selector 3 (span:nth-of-type(1)) */}
+        <span className="absolute inset-0 block w-full h-full" id={`${variant}-logo-badge-span`}>
+          <svg
+            viewBox="0 0 100 100"
             fill="none"
-            stroke="url(#dark-bevel)"
-            strokeWidth="1.5"
-            strokeOpacity="0.85"
-          />
-
-          {/* Heart shaped Film Strip logo vector (Matches Image 1 layout) */}
-          <g filter="url(#gold-extrude)">
-            {/* Beautiful stylized compound path representing heart-shaped film strip core */}
-            <path
-              d="M50 78 C56 72 73 53.5 73.5 39 C74 27.5 64 21 54.5 21 C51.5 21 50 22.5 50 22.5 C50 22.5 48.5 21 45.5 21 C36 21 26 27.5 26.5 39 C27 53.5 44 72 50 78 Z"
-              fill="none"
-              stroke="url(#gold-3d-metallic)"
-              strokeWidth="6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-full"
+          >
+            <defs>
+              {/* Outer gold border gradient */}
+              <linearGradient id={`${variant}-goldGradOuter`} x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#ffeecc" />
+                <stop offset="35%" stopColor="#d4af64" />
+                <stop offset="70%" stopColor="#b3914e" />
+                <stop offset="100%" stopColor="#6b5021" />
+              </linearGradient>
+              {/* Inner gold border gradient */}
+              <linearGradient id={`${variant}-goldGradInner`} x1="100%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stopColor="#ffe69c" />
+                <stop offset="50%" stopColor="#d4af64" />
+                <stop offset="100%" stopColor="#806228" />
+              </linearGradient>
+              {/* Map pin gold gradient */}
+              <linearGradient id={`${variant}-goldGradPin`} x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#fff6df" />
+                <stop offset="50%" stopColor="#d4af64" />
+                <stop offset="100%" stopColor="#967433" />
+              </linearGradient>
+            </defs>
+            
+            {/* Glossy dark base background */}
+            <rect
+              x="5"
+              y="5"
+              width="90"
+              height="90"
+              rx="22"
+              fill="#050505"
+              stroke={`url(#${variant}-goldGradOuter)`}
+              strokeWidth="4.5"
             />
             
-            {/* Film core circle (the inner reel hub on the right side) */}
-            <circle cx="58" cy="38" r="8" fill="url(#gold-3d-metallic)" />
-            
-            {/* Left side film strip perforations (cutout details representing movie frames) */}
-            <rect x="33" y="27" width="3.5" height="4" rx="1" fill="url(#gold-3d-metallic)" transform="rotate(-15, 33, 27)" />
-            <rect x="29" y="37" width="3.5" height="4" rx="1" fill="url(#gold-3d-metallic)" transform="rotate(5, 29, 37)" />
-            <rect x="32" y="48" width="3.5" height="4" rx="1" fill="url(#gold-3d-metallic)" transform="rotate(25, 32, 48)" />
-            <rect x="38" y="58" width="3.5" height="4" rx="1" fill="url(#gold-3d-metallic)" transform="rotate(45, 38, 58)" />
-            
-            {/* Film spokes detailing */}
-            <line x1="58" y1="38" x2="58" y2="21" stroke="url(#gold-3d-metallic)" strokeWidth="1.5" />
-            <line x1="58" y1="38" x2="71" y2="45" stroke="url(#gold-3d-metallic)" strokeWidth="1.5" />
-            <line x1="58" y1="38" x2="48" y2="46" stroke="url(#gold-3d-metallic)" strokeWidth="1.5" />
-          </g>
-        </svg>
+            {/* Fine gold inner frame accent */}
+            <rect
+              x="11"
+              y="11"
+              width="78"
+              height="78"
+              rx="17"
+              fill="transparent"
+              stroke={`url(#${variant}-goldGradInner)`}
+              strokeWidth="1"
+              opacity="0.75"
+            />
+
+            {/* Premium Location Pin with Camera Shutter aperture cutout (Even-Odd fill Rule) */}
+            <path
+              d="M 50 19 C 33 19 20 32 20 49 C 20 66.5 50 83 50 83 C 50 83 80 66.5 80 49 C 80 32 67 19 50 19 Z M 50 34 C 58.28 34 65 40.72 65 49 C 65 57.28 58.28 64 50 64 C 41.72 64 35 57.28 35 49 C 35 40.72 41.72 34 50 34 Z"
+              fill={`url(#${variant}-goldGradPin)`}
+              fillRule="evenodd"
+            />
+
+            {/* Camera Lens ring details inside the map pin head */}
+            <circle
+              cx="50"
+              cy="49"
+              r="12.5"
+              stroke={`url(#${variant}-goldGradInner)`}
+              strokeWidth="1"
+              fill="none"
+              opacity="0.8"
+            />
+            <circle
+              cx="50"
+              cy="49"
+              r="9"
+              stroke={`url(#${variant}-goldGradPin)`}
+              strokeWidth="0.8"
+              fill="none"
+              opacity="0.6"
+            />
+
+            {/* Camera lens diagonal shutter blade segment lines */}
+            <path
+              d="M 50 36.5 L 44 42 M 41.5 45.2 L 40 52 M 42.2 55.5 L 48 59.5 M 53.5 59.5 L 59 55.5 M 60 50.5 L 59.5 43.5 M 57 39 L 51 37"
+              stroke={`url(#${variant}-goldGradPin)`}
+              strokeWidth="1.3"
+              strokeLinecap="round"
+              opacity="0.95"
+            />
+          </svg>
+        </span>
       </div>
 
-      {/* Elegant Golden 3D Typography */}
-      <div className="flex flex-col">
-        {/* Main YASH RAJ title */}
-        <span 
-          className={`font-sans tracking-[0.16em] font-black uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#ffeeb8] via-[#d4af37] to-[#aa7c11] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] leading-none ${
-            isHeader ? 'text-lg sm:text-xl' : 'text-xl sm:text-2xl'
-          }`}
-          style={{
-            fontFamily: '"Space Grotesk", "Inter", sans-serif',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
-        >
-          Yash Raj
+      {/* Second child container (div:nth-of-type(2)) for brand letters & descriptors */}
+      <div className="text-left flex flex-col justify-center">
+        {/* 'YASH RAJ' title in heavy metallic font with wide letter-spacing */}
+        <span className="text-[14px] sm:text-[16px] tracking-[0.25em] font-serif font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#ffe8a8] via-[#d4af64] to-[#997c45] uppercase leading-none transition-all duration-300 group-hover:brightness-110">
+          YASH RAJ
         </span>
-        
-        {/* Subtitle mapping */}
-        <span 
-          className={`font-sans tracking-[0.22em] uppercase font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#e8c766] to-[#a3791a] leading-none ${
-            isHeader ? 'text-[8px] sm:text-[9px] mt-1' : 'text-[9px] sm:text-[10px] mt-1.5'
-          }`}
-          style={{
-            fontFamily: '"Inter", sans-serif',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
-        >
-          Motion Picture • Ahmedabad
-        </span>
+
+        {/* Subtitle containing 'MOTION PICTURE • AHMEDABAD' */}
+        <div className="mt-1 flex flex-col sm:relative">
+          {/* Responsive presentation: Displays full horizontal line on sm and wider screens */}
+          <span className="hidden sm:inline text-[7px] sm:text-[8px] tracking-[0.3em] font-sans font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#e0c080] to-[#b3914e] uppercase leading-none mt-0.5">
+            MOTION PICTURE • AHMEDABAD
+          </span>
+          {/* Displays stacked multiline view on mobile screen widths (exactly matching Image 2) */}
+          <div className="flex flex-col sm:hidden">
+            <span className="text-[6.5px] tracking-[0.25em] font-sans font-semibold text-[#b3914e] uppercase leading-none">
+              MOTION PICTURE •
+            </span>
+            <span className="text-[6.5px] tracking-[0.25em] font-sans font-bold text-[#d4af64] uppercase leading-none mt-[3px]">
+              AHMEDABAD
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );
-}
+};
+

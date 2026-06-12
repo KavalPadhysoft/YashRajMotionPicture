@@ -1,344 +1,275 @@
-import { PortfolioItem, Testimonial, ServiceDetail, BookingPackage, InstagramPost } from './types';
+import { Service, PortfolioItem, PricingPackage, Testimonial, InstagramPost } from "./types";
 
-// Premium high-res cinematic photography assets from Pexels (Indian Weddings, Fashion, Corporate)
-export const HERO_VIDEO_URL = "https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-tender-embrace-on-their-wedding-day-40034-large.mp4";
-export const BACKUP_HERO_IMAGE = "https://images.pexels.com/photos/20147188/pexels-photo-20147188.jpeg?auto=compress&cs=tinysrgb&w=1200&q=70";
-
-export const PORTFOLIO_ITEMS: PortfolioItem[] = [
+export const services: Service[] = [
   {
-    id: 'w1',
-    title: 'The Royal Gujarati Vivah',
-    category: 'wedding',
-    type: 'image',
-    url: 'https://images.pexels.com/photos/20147188/pexels-photo-20147188.jpeg?auto=compress&cs=tinysrgb&w=900&q=70',
-    thumbnailUrl: 'https://images.pexels.com/photos/20147188/pexels-photo-20147188.jpeg?auto=compress&cs=tinysrgb&w=400&q=60',
-    description: 'A majestic traditional wedding ceremony captured in the heart of Ahmedabad, highlighting regal gold and crimson detail.',
-    location: 'Taj Skyline, Ahmedabad',
-    photographer: 'Yash Raj'
+    id: "wedding-photography",
+    title: "Wedding Films & Photography",
+    subtitle: "Heritage Cinematic Stills & Motion Portfolio Suite",
+    shortDescription: "Our flagship coverage capturing high-stakes emotional smiles, royal Gujarati heritage scale, and stunning midnight candlelight ceremonies.",
+    longDescription: "Our Wedding Film signature suite is meticulously designed for couples who seek a cinematic masterwork. We blend art-tier cinematography with state-of-the-art soundscapes and custom color adjustments to turn your grand celebrations into a majestic heritage relic. Filmed using native cinema cameras with anamorphic optics, every shot looks like a high-end dramatic movie frame.",
+    bannerImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200",
+    pricing: "₹85,000 - ₹1,50,000",
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-wedding-couple-walking-through-vines-in-sunlight-41604-large.mp4",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=800"
+    ],
+    features: [
+      "Principal Cinematic Director Yash Raj coverage",
+      "Symmetrical architectural master frames positioning",
+      "Dual-operator setup with Cine prime lenses",
+      "Exclusive midnight-gold color profiling",
+      "Fully soundscaped non-linear narratives"
+    ],
+    deliverables: [
+      "1x Feature Cinematic Film (25 - 45 minutes)",
+      "1x High-Energy Visual Teaser (3 - 5 minutes)",
+      "350+ fully graded high-res digital stills",
+      "Leather-Bound Handcrafted Matte Photo Book"
+    ]
   },
   {
-    id: 'pw1',
-    title: 'Ethereal Whispers at Adalaj Stepwell',
-    category: 'pre-wedding',
-    type: 'image',
-    url: 'https://images.pexels.com/photos/20147178/pexels-photo-20147178.jpeg?auto=compress&cs=tinysrgb&w=900&q=70',
-    thumbnailUrl: 'https://images.pexels.com/photos/20147178/pexels-photo-20147178.jpeg?auto=compress&cs=tinysrgb&w=400&q=60',
-    description: 'A stunning pre-wedding shoot utilizing the symmetrical, ancient stone architecture of Adalaj, Gujarat.',
-    location: 'Adalaj Stepwell, Gandhinagar',
-    photographer: 'Yash Raj'
+    id: "pre-wedding-shoots",
+    title: "The Cinematic Pre-Wedding",
+    subtitle: "Dynamic Lovers Storyboards Set in Ancient Ruins",
+    shortDescription: "Choreographed cinematic narratives weaving through Adalaj Stepwell or GIFT high-rises. Blending raw architecture with deep romantic depth.",
+    longDescription: "Tell your unique story before the wedding. We construct a bespoke script and screenwrite custom frame sequences based on how you met, set against the breathtaking backdrops of Ahmedabad's historic stepwells or modern high-technology hubs. Directed with natural motion and high-fashion aesthetics.",
+    bannerImage: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1200",
+    pricing: "₹35,000 - ₹50,000",
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-young-couple-in-love-enjoying-the-sunset-41617-large.mp4",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=800"
+    ],
+    features: [
+      "Bespoke storyline & narrative drafting",
+      "Location scout coordination (Adalaj & Sabarmati)",
+      "Slow-motion cinematic tracking techniques",
+      "Stylist & couture consultation pre-shoot"
+    ],
+    deliverables: [
+      "1x Cinematic Narrative Trailer (2 - 3 minutes)",
+      "75+ fully graded digital high-stakes portraits",
+      "Online visual showcase delivery portal"
+    ]
   },
   {
-    id: 'f1',
-    title: 'Heritage Couture Showcase',
-    category: 'fashion',
-    type: 'image',
-    url: 'https://images.pexels.com/photos/1805412/pexels-photo-1805412.jpeg?auto=compress&cs=tinysrgb&w=900&q=70',
-    thumbnailUrl: 'https://images.pexels.com/photos/1805412/pexels-photo-1805412.jpeg?auto=compress&cs=tinysrgb&w=400&q=60',
-    description: 'Editorial luxury garment shoot blending classical Indian embroidery with high-contrast, moody studio lighting.',
-    location: 'Studio Crescent, Ahmedabad',
-    photographer: 'Yash Raj'
+    id: "heritage-portraits",
+    title: "Heritage Portrait Session",
+    subtitle: "Classic Monochromatic and Dark Metallic Shoots",
+    shortDescription: "Asymmetric lighting and high dramatic contrast portraitures, ideal for keeping a permanent cultural link in architectural backdrops.",
+    longDescription: "A curated photo series that captures the deep soul, personality, and style of the muse. Combining natural shadow play, vintage lighting setups, and luxurious poses with modern luxury clothing.",
+    bannerImage: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=1200",
+    pricing: "₹25,000 - ₹40,000",
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-holding-hands-in-the-forest-41600-large.mp4",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800"
+    ],
+    features: [
+      "Studio custom dramatic backlight arrangement",
+      "High-contrast black & white calibration option",
+      "Custom prop and backdrop coordination"
+    ],
+    deliverables: [
+      "40+ ultra-premium high-resolution stills",
+      "3x Handcrafted fine art museum gallery canvas prints",
+      "Private server backup for 2 years"
+    ]
   },
   {
-    id: 'w2',
-    title: 'Golden Hour pheras',
-    category: 'wedding',
-    type: 'image',
-    url: 'https://images.pexels.com/photos/10452378/pexels-photo-10452378.jpeg?auto=compress&cs=tinysrgb&w=900&q=70',
-    thumbnailUrl: 'https://images.pexels.com/photos/10452378/pexels-photo-10452378.jpeg?auto=compress&cs=tinysrgb&w=400&q=60',
-    description: 'Warm cinematic sun flares framing the eternal promises. Full high-contrast details of the bride\'s bespoke lehenga.',
-    location: 'Madhavgarh Heritage Palace, Outskirts of Ahmedabad',
-    photographer: 'Yash Raj'
-  },
-  {
-    id: 'c1',
-    title: 'The Tech Visionaries Summit',
-    category: 'corporate',
-    type: 'image',
-    url: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=900&q=70',
-    thumbnailUrl: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=400&q=60',
-    description: 'Premium corporate storytelling, delivering crisp candid shots during executive interaction in GIFT City.',
-    location: 'GIFT One Tower, GIFT City',
-    photographer: 'Yash Raj'
-  },
-  {
-    id: 'pw2',
-    title: 'Symphony of Lights at Riverfront',
-    category: 'pre-wedding',
-    type: 'video',
-    url: 'https://assets.mixkit.co/videos/preview/mixkit-holding-hands-of-a-couple-in-love-43224-large.mp4',
-    thumbnailUrl: 'https://images.pexels.com/photos/14883168/pexels-photo-14883168.jpeg?auto=compress&cs=tinysrgb&w=400&q=60',
-    description: 'A modern pre-wedding film set against the glowing skyline of Sabarmati Riverfront at dusk.',
-    location: 'Sabarmati Riverfront, Ahmedabad',
-    photographer: 'Yash Raj'
-  },
-  {
-    id: 'f2',
-    title: 'Minimalist Monochrome Editorial',
-    category: 'fashion',
-    type: 'image',
-    url: 'https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=900&q=70',
-    thumbnailUrl: 'https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=400&q=60',
-    description: 'Avant-garde styling showcasing sharp silhouettes and modern aesthetics in dramatic shadows.',
-    location: 'Sabarmati Ashram Museum Grounds',
-    photographer: 'Yash Raj'
-  },
-  {
-    id: 'w3',
-    title: 'Vows of Elegance',
-    category: 'wedding',
-    type: 'video',
-    url: 'https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-strolling-on-a-sandy-beach-during-sunset-5310-large.mp4',
-    thumbnailUrl: 'https://images.pexels.com/photos/14088851/pexels-photo-14088851.jpeg?auto=compress&cs=tinysrgb&w=400&q=60',
-    description: 'An emotional cinematic highlight trailer showing tears and joy during exchange of garlands.',
-    location: 'Hyatt Regency, Ahmedabad',
-    photographer: 'Yash Raj'
-  },
-  {
-    id: 'c2',
-    title: 'Executive Portraits in Contrast',
-    category: 'corporate',
-    type: 'image',
-    url: 'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=900&q=70',
-    thumbnailUrl: 'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=400&q=60',
-    description: 'High-end black & white and warm copper tone headshots for key leadership profiles of leading Gujarati firms.',
-    location: 'Sindhu Bhavan Road Offices, Ahmedabad',
-    photographer: 'Yash Raj'
+    id: "retail-editorial",
+    title: "High Fashion Editorial",
+    subtitle: "Couture Campaign Portfolios & Runway Lookbooks",
+    shortDescription: "Ultra-sharp lookbooks, commercial styling campaigns, and luxury dynamic lookbooks for premium boutiques on SBR Ahmedabad.",
+    longDescription: "High-fashion commercial photography and styling campaigns designed to elevate local and prestigious national brands. Featuring deep shadows and heavy gold accents mapping.",
+    bannerImage: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=1200",
+    pricing: "₹45,000 - ₹75,000",
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-strolling-on-a-sandy-beach-during-sunset-5310-large.mp4",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800"
+    ],
+    features: [
+      "High-speed strobe lighting synchronization",
+      "E-commerce metadata & standard ratios sizing",
+      "On-set fashion creative director assistance"
+    ],
+    deliverables: [
+      "Digital Lookbook ready for cataloging",
+      "15x Retouched editorial poster shots",
+      "Social media active aspect ratio cuts"
+    ]
   }
 ];
 
-export const SERVICES: ServiceDetail[] = [
+export const portfolioItems: PortfolioItem[] = [
   {
-    id: 'wedding-photography',
-    title: 'Wedding Photography',
-    subtitle: 'Timeless Legacies of Love',
-    tagline: 'Preserving the grandeur of your sacred union with poetic framing & rich golden tones.',
-    slug: 'wedding-photography',
-    pricing: 'Starting at ₹45,000 / Event',
-    shortDescription: 'From high-stakes emotional smiles to grand architectural portraits, our wedding photography is an heirloom of memory designed to last generations.',
-    longDescription: 'Every wedding is a royal visual novel packed with fleeting details, sacred mantras, grand entrances, and quiet, emotional lookaways. At Yash Raj Motion Picture, we capture these with utmost respect for tradition and a contemporary cinematic eye. We use elite dual-camera setups and specialized high-speed prime lenses to maintain rich contrast and stunning depth on our "Midnight Premium" palette.',
-    features: [
-      'Dual Elite Full-Frame Cameras (2 Primary Photographers)',
-      'Candid & Creative Cinematic Portraits',
-      'High-Resolution Retouched Signature Album of 350+ Assets',
-      'Advanced Color Grading suited for Rich Warm & Dramatic tones',
-      'Next-Day Sizzle Photo Selection for Social Sharing'
-    ],
-    deliverables: [
-      'Custom Embossed Leatherbound Premium Hardcopy Photobook',
-      'Digital Cloud Gallery link with 10-Year Active Cloud Backup',
-      'Cinematic teaser carousel formatted specifically for Instagram Reels (9:16)'
-    ],
-    bannerImage: 'https://images.pexels.com/photos/20147188/pexels-photo-20147188.jpeg?auto=compress&cs=tinysrgb&w=800&q=60',
-    galleryImages: [
-      'https://images.pexels.com/photos/20147188/pexels-photo-20147188.jpeg?auto=compress&cs=tinysrgb&w=400&q=55',
-      'https://images.pexels.com/photos/14088851/pexels-photo-14088851.jpeg?auto=compress&cs=tinysrgb&w=400&q=55',
-      'https://images.pexels.com/photos/10452378/pexels-photo-10452378.jpeg?auto=compress&cs=tinysrgb&w=400&q=55'
-    ],
-    youtubeVideoId: 'xS-v6XnPl-s',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-tender-embrace-on-their-wedding-day-40034-large.mp4'
+    id: "pt-1",
+    category: "wedding",
+    thumbnailUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
+    title: "The Palace Splendor",
+    location: "Heritage Palace, Adalaj",
+    type: "image",
+    description: "Gujarati Royal Wedding coupling symmetrical palace architecture with deep matte shadows and rich candle lighting.",
+    url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000"
   },
   {
-    id: 'pre-wedding-shoots',
-    title: 'Pre-Wedding & Films',
-    subtitle: 'The Cinematic Prologue',
-    tagline: 'We turn your unique couple story into a spectacular music film set in historical Gujarati landscapes.',
-    slug: 'pre-wedding-shoots',
-    pricing: 'Starting at ₹35,000 / Complete Package',
-    shortDescription: 'Shot on magnificent historical and contemporary architecture in Ahmedabad, Gandhinagar, or custom premium retreats.',
-    longDescription: 'Your pre-wedding is a canvas of pure anticipation. We conceptualize personalized narratives, helping select majestic heritage backdrops like Adalaj Stepwell, Sarkhej Roja, or the sleek Sabarmati Riverfront. Using drone assistance and stable gimbal cinematography, we recreate Bollywood-level grand vistas synchronized with an acoustic score.',
-    features: [
-      'Interactive Concept Boarding & Outfit Advice sessions',
-      '1 Professional Cinematic Director + 1 Lead Cinematographer',
-      'Aerial drone footage authorized for heritage & nature horizons',
-      'Professional stabilizer gimbals & premium slow-motion setups',
-      'Bespoke cinematic music synchronization with licensed audio'
-    ],
-    deliverables: [
-      '1 Full-Length Cinematic Story Film (3-4 mins, 4K resolution)',
-      '1 Social Media Reel/Teaser (30-60 secs with aesthetic styling)',
-      '50 fully graded premium couple landscape portraits'
-    ],
-    bannerImage: 'https://images.pexels.com/photos/20147178/pexels-photo-20147178.jpeg?auto=compress&cs=tinysrgb&w=800&q=60',
-    galleryImages: [
-      'https://images.pexels.com/photos/20147178/pexels-photo-20147178.jpeg?auto=compress&cs=tinysrgb&w=400&q=55',
-      'https://images.pexels.com/photos/14883168/pexels-photo-14883168.jpeg?auto=compress&cs=tinysrgb&w=400&q=55',
-      'https://images.pexels.com/photos/1805412/pexels-photo-1805412.jpeg?auto=compress&cs=tinysrgb&w=400&q=55'
-    ],
-    youtubeVideoId: 'sR2yAn3zS6Q',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-couple-in-love-enjoying-the-sunset-41617-large.mp4'
+    id: "pt-2",
+    category: "pre-wedding",
+    thumbnailUrl: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800",
+    title: "Adalaj Whispers",
+    location: "Adalaj Stepwell Site",
+    type: "video",
+    description: "A slow-tracking romantic cinema shot highlighting the intricate columns of Adalaj stepwell with dynamic daylight flares.",
+    url: "https://assets.mixkit.co/videos/preview/mixkit-young-couple-in-love-enjoying-the-sunset-41617-large.mp4"
   },
   {
-    id: 'heritage-portraits',
-    title: 'Heritage Portraits',
-    subtitle: 'Vantage Point of Kings',
-    tagline: 'Timeless single and family portraiture inside traditional stepwells and ancient architecture.',
-    slug: 'heritage-portraits',
-    pricing: 'Starting at ₹25,000 / Complete Session',
-    shortDescription: 'Preserve your ancestral identity with highly stylized contrast portraits captured inside hand-vetted heritage locations.',
-    longDescription: 'Our Heritage Portrait sessions focus purely on classical composition, micro-textures, and high-stakes lighting configurations. Ideal for individuals, luxury couples, and traditional Gujarati families who desire a heavy-contrast artistic portfolio reminiscent of historical oil paintings.',
-    features: [
-      '1 Lead Cinematic Director with custom high-contrast keylight equipment',
-      'Access permission advisory for key heritage sites in Gujarat',
-      'Continuous aesthetic styling supervision during the session',
-      'Dual ambient lighting systems and shadow reflector plates'
-    ],
-    deliverables: [
-      '20 Masterfully retouched custom Signature canvases (suitable for 4K display)',
-      'High-Resolution printing plates with complete personal release rights',
-      'Archival matte luxury paper physical frames (set of 3)'
-    ],
-    bannerImage: 'https://images.pexels.com/photos/1805412/pexels-photo-1805412.jpeg?auto=compress&cs=tinysrgb&w=800&q=60',
-    galleryImages: [
-      'https://images.pexels.com/photos/1805412/pexels-photo-1805412.jpeg?auto=compress&cs=tinysrgb&w=400&q=55',
-      'https://images.pexels.com/photos/20147178/pexels-photo-20147178.jpeg?auto=compress&cs=tinysrgb&w=400&q=55',
-      'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=400&q=55'
-    ],
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-holding-hands-of-a-couple-in-love-43224-large.mp4'
+    id: "pt-3",
+    category: "fashion",
+    thumbnailUrl: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=800",
+    title: "The Midnight Silk",
+    location: "Bodakdev Studio",
+    type: "image",
+    description: "Couture editorial campaign framing gold jewelry against deep velvet charcoal fabrics and extreme contrast shadow structures.",
+    url: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=2000"
   },
   {
-    id: 'retail-editorial',
-    title: 'High Fashion & Editorial',
-    subtitle: 'Haute Couture Legends',
-    tagline: 'Bespoke catalog and narrative visual campaigns for premium designers and boutique labels.',
-    slug: 'retail-editorial',
-    pricing: 'Starting at ₹35,000 / Day Shoot',
-    shortDescription: 'Combining high-fashion silhouettes with dramatic shadows to capture the authentic textures of premium traditional fabrics.',
-    longDescription: 'Designed specifically for Ahmedabad\'s legendary textile boutique owners and startup luxury dressmakers, our High Fashion & Editorial service delivers highly-polished catalog images and visual lookbooks. We treat garments as works of art, setting up rigorous directional lighting grids to reflect every intricate embroidery stitch.',
-    features: [
-      'High-performance technical strobe lights and backdrop controllers',
-      'Continuous color accuracy monitoring matching fabric threads',
-      'Pre-production concept and layout design storyboard consultation',
-      'High-res active modeling coaching by the director'
-    ],
-    deliverables: [
-      'Full Digital Lookbook formatted for print and official catalogs',
-      'Ultra-HD web files optimized for premium retail platforms',
-      '1 Cinematic motion poster reel summarizing the collection theme'
-    ],
-    bannerImage: 'https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=800&q=60',
-    galleryImages: [
-      'https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=400&q=55',
-      'https://images.pexels.com/photos/1805412/pexels-photo-1805412.jpeg?auto=compress&cs=tinysrgb&w=400&q=55',
-      'https://images.pexels.com/photos/14883168/pexels-photo-14883168.jpeg?auto=compress&cs=tinysrgb&w=400&q=55'
-    ],
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-romantic-couple-strolling-on-a-sandy-beach-during-sunset-5310-large.mp4'
+    id: "pt-4",
+    category: "corporate",
+    thumbnailUrl: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800",
+    title: "Tech Horizon Summit",
+    location: "GIFT City Club, Gandhinagar",
+    type: "image",
+    description: "Symmetrical visual coverage of Ahmedabad's leading business summit featuring sharp-light layouts and glass textures.",
+    url: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=2000"
+  },
+  {
+    id: "pt-5",
+    category: "wedding",
+    thumbnailUrl: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=800",
+    title: "Candlelight Vows",
+    location: "Sindhu Bhavan Road, Ahmedabad",
+    type: "video",
+    description: "Tender embrace during a night ritual in a forest garden setup on SBR, completely lit by custom chandeliers.",
+    url: "https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-tender-embrace-on-their-wedding-day-40034-large.mp4"
+  },
+  {
+    id: "pt-6",
+    category: "pre-wedding",
+    thumbnailUrl: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800",
+    title: "GIFT City Monoliths",
+    location: "GIFT City, Gandhinagar",
+    type: "image",
+    description: "Modern romantic pre-wedding narrative contrasting futuristic architectural glass with warm, natural handholding details.",
+    url: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=2000"
   }
 ];
 
-export const TESTIMONIALS: Testimonial[] = [
+export const packages: PricingPackage[] = [
   {
-    id: 't1',
-    name: 'Anjali & Rajveersinh Jadeja',
-    role: 'Bespoke Heritage Wedding Couple',
-    rating: 5,
-    text: 'Yash Raj Motion Picture turned our wedding at the Taj Skyline into a cinematic masterpiece. The rich gold hues, breathtaking slow-mo candids, and the stunning pre-wedding at Adalaj Stepwell have left our families speechless. True professionals who understand lighting like magicians!',
-    date: 'February 2026',
-    coupleImage: 'https://images.pexels.com/photos/20147188/pexels-photo-20147188.jpeg?auto=compress&cs=tinysrgb&w=80&q=55'
-  },
-  {
-    id: 't2',
-    name: 'Meera Patel',
-    role: 'Lead Designer, Vastra Heritage Couture',
-    rating: 5,
-    text: 'For our Ahmedabad-based fashion launch, we needed a moody, midnight luxury aesthetic. Yash Raj and his team exceeded expectations. The high contrast, sharp silhouettes, and micro-framing made our luxury traditional textiles pop. Absolutely stellar editorial work.',
-    date: 'April 2026',
-    coupleImage: 'https://images.pexels.com/photos/1805412/pexels-photo-1805412.jpeg?auto=compress&cs=tinysrgb&w=80&q=55'
-  },
-  {
-    id: 't3',
-    name: 'Devang Shah',
-    role: 'Vice President, G-Tech Gujarat Solutions',
-    rating: 5,
-    text: 'We hired Yash Raj for our annual summit profiling at GIFT City. The candidate corporate headshots and team action captures were extremely crisp, matching our modern corporate brand structure. Fast delivery and clean aesthetic.',
-    date: 'May 2026',
-    coupleImage: 'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=80&q=55'
-  }
-];
-
-// Curated pricing bundles aligning with "₹ 35,000 Advance/Budget" guidelines from the user request
-export const PACKAGES: BookingPackage[] = [
-  {
-    id: 'pkg-pre-wedding',
-    title: 'The Cinematic Pre-Wedding',
-    subtitle: 'Most Popular Choice in Ahmedabad',
-    price: '₹ 35,000',
-    category: 'pre-wedding',
+    id: "pkg-1",
+    title: "Heritage Masterpackage",
+    subtitle: "THE PLATINUM SUITE",
+    price: "₹1,45,000",
     features: [
-      'Full Day Shoot (up to 3 scenic locations in Ahmedabad/Adalaj)',
-      '1 Directors cut film (3 minutes, 4K resolution)',
-      '40 Edited High-Res Cinematic Portraits',
-      'Beautiful Drone Landscapes included',
-      'Gold Custom Styled Teaser Reel (9:16 format)',
-      '50% Advance Booking confirmation (₹ 17,500)'
+      "Yash Raj as Principal Director throughout",
+      "Full 3-Day Wedding and pre-wedding coverage",
+      "Cinematic prime lenses and sound setup",
+      "1x Feature Film + 1x High-Energy Teaser",
+      "Royal Handcrafted Leather Album + Box set",
+      "Dual Cine drones capturing aerial graphics",
+      "Complete 4K raw archive storage supply"
     ],
     popular: true
   },
   {
-    id: 'pkg-royal-wedding',
-    title: 'Heritage Wedding Film & Shoot',
-    subtitle: 'Classic Multi-Event coverage',
-    price: '₹ 85,000',
-    category: 'wedding',
+    id: "pkg-2",
+    title: "Classic Cinematic",
+    subtitle: "THE GOLD COLLECTION",
+    price: "₹85,000",
     features: [
-      'Complete Coverage of Pheras + Sangeet + Reception',
-      'Team of 3 Photographers + 2 Videographers',
-      '1 Royal Wedding Highlights Film (6 mins)',
-      '300+ signature color-graded high-res shots',
-      'Luxury leatherbound hardcopy physical album',
-      '50% Advance Booking confirmation (₹ 42,500)'
-    ],
-    popular: false
+      "Full 2-Day Wedding and main rituals coverage",
+      "Premium Cinematic Director Team",
+      "1x Narrative Highlights Film (15 minutes)",
+      "1x Aesthetic Teaser Film (3 minutes)",
+      "Fine Art Premium Photo Matte Album",
+      "UHD Digital files delivery within 4 weeks"
+    ]
   },
   {
-    id: 'pkg-signature-combo',
-    title: 'Yash Raj Premium Legacy',
-    subtitle: 'Complete Pre-Wedding + Wedding Suite',
-    price: '₹ 1,15,000',
-    category: 'premium-combo',
+    id: "pkg-3",
+    title: "Aesthetic Baseline",
+    subtitle: "THE ESSENTIALS SELECTION",
+    price: "₹35,000",
     features: [
-      'Comprehensive Pre-Wedding cinematic shoot on drone + camera',
-      'Comprehensive 2-Day Wedding Event Photography & Videography',
-      'Next-day delivery of select signature frames',
-      '2 Premium hardcopy personalized photo albums',
-      '10-Year Active Cloud storage with dedicated client pin code',
-      '50% Advance Booking confirmation (₹ 57,500)'
-    ],
-    popular: false
+      "Single-Day comprehensive shoot coverage",
+      "1x Traditional teaser & cinematic highlights film",
+      "75+ Color corrected high-definition stills",
+      "Online visual portal secured backup",
+      "Ideal for pre-weddings or intimate rituals"
+    ]
   }
 ];
 
-// Mock Instagram Posts for the portfolio and social feed
-export const INSTAGRAM_POSTS: InstagramPost[] = [
+export const testimonials: Testimonial[] = [
   {
-    id: 'insta-1',
-    imageUrl: 'https://images.pexels.com/photos/20147188/pexels-photo-20147188.jpeg?auto=compress&cs=tinysrgb&w=260&q=50',
-    likes: 1248,
-    comments: 42,
-    caption: 'Traditions shining in pure gold. Captured at Hyde Palace #YashRajMotionPicture #AhmedabadWedding #GujaratiMarriage',
-    link: '#'
+    id: 1,
+    rating: 5,
+    text: "Yash Raj turned our Ahmedabad heritage wedding into an absolute visual legacy. The framing when we entered the lit mandap on SBR felt like a high-budget Bollywood scene. Worth every single rupee.",
+    coupleImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=150",
+    name: "Rajveer & Anjali",
+    role: "GRAND PALACE WEDDING"
   },
   {
-    id: 'insta-2',
-    imageUrl: 'https://images.pexels.com/photos/20147178/pexels-photo-20147178.jpeg?auto=compress&cs=tinysrgb&w=260&q=50',
-    likes: 980,
-    comments: 18,
-    caption: 'Symmetry of history, symmetry of love at Adalaj Stepwell. #PreWeddingFilms #CinematicLove #AhmedabadCouple',
-    link: '#'
+    id: 2,
+    rating: 5,
+    text: "For our pre-wedding shoot at Adalaj Stepwell, Yash Raj spent hours calculating correct shadows and sun angles. The end output got thousands of views and is a literal work of art we watch weekly.",
+    coupleImage: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=150",
+    name: "Devvrat & Vaishali",
+    role: "ADALAJ HERITAGE SESSION"
   },
   {
-    id: 'insta-3',
-    imageUrl: 'https://images.pexels.com/photos/1805412/pexels-photo-1805412.jpeg?auto=compress&cs=tinysrgb&w=260&q=50',
-    likes: 812,
-    comments: 24,
-    caption: 'Shadows tell a story. Styled with high-contrast Midnight aesthetics. #FashionGujarat #AhmedabadPhotography',
-    link: '#'
+    id: 3,
+    rating: 5,
+    text: "The lookbook photography they did for our boutique couture brand on Sindhu Bhavan Road was phenomenal. Extremely sharp edge frames, beautiful depth, and lightning fast delivery.",
+    coupleImage: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=150",
+    name: "Meera Shah",
+    role: "HAUTE FASHION CAMPAIGN"
+  }
+];
+
+export const instagramPosts: InstagramPost[] = [
+  {
+    id: "ig-1",
+    imageUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600",
+    caption: "Midnight gold glows different under SBR palace chandeliers. Pure bliss. #AmdavadWeddings #YashRajFilms",
+    likes: "1,248",
+    comments: "42"
   },
   {
-    id: 'insta-4',
-    imageUrl: 'https://images.pexels.com/photos/10452378/pexels-photo-10452378.jpeg?auto=compress&cs=tinysrgb&w=260&q=50',
-    likes: 1530,
-    comments: 56,
-    caption: 'Eternal vows framed by the golden hour sun. #TraditionalWeddings #IndianBride #CandidMoments',
-    link: '#'
+    id: "ig-2",
+    imageUrl: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600",
+    caption: "Geometric lines meet endless love stories at Adalaj Stepwell. Symmetrical royalty. #GujaratPreweddings #HeritageCinematography",
+    likes: "956",
+    comments: "18"
+  },
+  {
+    id: "ig-3",
+    imageUrl: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=600",
+    caption: "Silk collection couture launch styling in Bodakdev. Play with shadows. #AhmedabadFashion #MidnightSuite",
+    likes: "1,412",
+    comments: "55"
+  },
+  {
+    id: "ig-4",
+    imageUrl: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=600",
+    caption: "Futuristic lines in GLASS at GIFT City. Modern stories waiting to happen. #AmdavadTeasers #CinematicLove",
+    likes: "874",
+    comments: "21"
   }
 ];
